@@ -5,7 +5,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha tests/example.spec.js"
+    "test": "mocha --require ts-node/register test/**/*.spec.ts",
+    "test-old": "mocha"
   },
   "author": "",
   "license": "ISC",
@@ -13,7 +14,10 @@
     "selenium-webdriver": "^4.10.0"
   },
   "devDependencies": {
+    "@types/mocha": "^10.0.1",
     "@types/selenium-webdriver": "^4.1.15",
-    "mocha": "^10.2.0"
+    "mocha": "^10.2.0",
+    "ts-mocha": "^10.0.0",
+    "ts-node": "^10.9.1"
   }
 }
