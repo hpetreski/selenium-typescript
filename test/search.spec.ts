@@ -10,7 +10,7 @@ const cookie = {
   expiry: 1722434590
 }
 
-describe('First script', function () {
+describe('Search functionality', function () {
   let driver: WebDriver;
   this.timeout(30000)
 
