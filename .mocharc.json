@@ -1,5 +1,6 @@
 {
     "loader": "ts-node/esm",
     "require": "../../../../test/hooks.js",
+    "reporter": "allure-mocha",
     "timeout": 30000
 }
