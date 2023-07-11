@@ -3,7 +3,7 @@ import { Home } from './pageObjects/Home.js'
 import { SearchResult } from './pageObjects/SearchResult.js'
 import { cookie } from '../data/cookieData.js'
 import { BrowserPage } from '../utils/BrowserUtils.js'
-import { baseUrl } from 'config/config.js'
+import { baseUrl } from '../config/config.js'
 
 describe('Search functionality', function () {
     it('Search for videos', async function () {
