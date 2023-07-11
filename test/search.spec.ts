@@ -10,7 +10,7 @@ describe('Search functionality', function () {
         // Disabling the linter complain as we are checking this in the before each step in the hook
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         const driver = this.test!.driver
-        
+
         const browserPage = new BrowserPage(driver)
         await browserPage.openApplication(baseUrl)
         await browserPage.addCookieAndRefresh(cookie)
