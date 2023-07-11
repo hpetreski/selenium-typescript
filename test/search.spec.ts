@@ -8,11 +8,7 @@ const baseUrl = 'https://www.youtube.com/'
 
 describe('Search functionality', function () {
     it('Search for videos', async function () {
-        // Error handling needs to be improved
-        if (this.test === null || this.test === undefined) {
-            throw new Error('Driver was not initialized correctly')
-        }
-        const driver = this.test.driver
+        const driver = this.test!.driver
 
         const browserPage = new BrowserPage(driver)
         await browserPage.openApplication(baseUrl)

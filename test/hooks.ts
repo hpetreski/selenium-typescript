@@ -9,6 +9,11 @@ export const mochaHooks = {
     beforeEach: [
         async function () {
             // Starts a new driver on each test globally
+            if (this.currentTest === null || this.currentTest === undefined) {
+                throw new Error(
+                    'Currently running test doesnt contain any data'
+                )
+            }
             this.currentTest.driver = await new Builder()
                 .forBrowser('chrome')
                 .build()
