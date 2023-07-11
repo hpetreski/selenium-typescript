@@ -1,24 +1,25 @@
-import { By, Locator, WebDriver, until } from "selenium-webdriver";
+import type { Locator, WebDriver } from 'selenium-webdriver'
+import { By, until } from 'selenium-webdriver'
 
 export class Home {
-  private searchInput: Locator = By.name("search_query");
-  private searchButton: Locator = By.id("search-icon-legacy");
+    private readonly searchInput: Locator = By.name('search_query')
+    private readonly searchButton: Locator = By.id('search-icon-legacy')
 
-  constructor(private driver: WebDriver) {}
+    constructor(private readonly driver: WebDriver) {}
 
-  async waitUntilSearchIsVisible() {
-    await this.driver.wait(
-      until.elementIsVisible(this.driver.findElement(this.searchInput)),
-      10000,
-    );
-  }
+    async waitUntilSearchIsVisible(): Promise<void> {
+        await this.driver.wait(
+            until.elementIsVisible(this.driver.findElement(this.searchInput)),
+            10000
+        )
+    }
 
-  async searchText(text: string) {
-    let searchBox = await this.driver.findElement(this.searchInput);
-    let searchButton = await this.driver.findElement(this.searchButton);
+    async searchText(text: string): Promise<void> {
+        const searchBox = await this.driver.findElement(this.searchInput)
+        const searchButton = await this.driver.findElement(this.searchButton)
 
-    await searchBox.click();
-    await searchBox.sendKeys(text);
-    await searchButton.click();
-  }
+        await searchBox.click()
+        await searchBox.sendKeys(text)
+        await searchButton.click()
+    }
 }

@@ -1,5 +1,6 @@
 In mochats.json file we are requiring the hooks file so it will load the root level hooks for mocha
 And we are using the ts-node/esm loader to as a loader for our mocha runner
+The project is using husky and lint-staged to run the linter on the staged git files as a pre-commit hook not to allow linting issues to be commited
 
 Below if what can be found in each folder and what is the naming structure:
 In the data folder we can find the static data files
