@@ -5,7 +5,7 @@ export class SearchResult{
     
     constructor(private driver: WebDriver){}
 
-    async getContentsElement(){
+    async getSearchResultElement(){
         await this.driver.wait(until.elementLocated(this.searchContents), 5000);
 
         return await this.driver.findElement(this.searchContents);

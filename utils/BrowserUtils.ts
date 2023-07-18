@@ -1,3 +1,6 @@
+/**
+ * This file specifies common browser related functions structured with the page object model
+ */
 import { Cookie } from 'interfaces/browser/BrowserInterfaces.js';
 import { WebDriver } from 'selenium-webdriver'; 
 
