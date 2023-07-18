@@ -1,5 +1,5 @@
 {
-  "loader": "ts-node/esm",
-  "require": "../../../../test/hooks.js",
-  "timeout": 30000
+    "loader": "ts-node/esm",
+    "require": "../../../../test/hooks.js",
+    "timeout": 30000
 }

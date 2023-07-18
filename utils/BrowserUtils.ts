@@ -1,22 +1,22 @@
 /**
  * This file specifies common browser related functions structured with the page object model
  */
-import { Cookie } from "interfaces/browser/BrowserInterfaces.js";
-import { WebDriver } from "selenium-webdriver";
+import type { Cookie } from 'interfaces/browser/BrowserInterfaces.js'
+import type { WebDriver } from 'selenium-webdriver'
 
 export class BrowserPage {
-  constructor(private driver: WebDriver) {}
+    constructor(private readonly driver: WebDriver) {}
 
-  async openApplication(url: string) {
-    await this.driver.get(url);
-  }
+    async openApplication(url: string): Promise<void> {
+        await this.driver.get(url)
+    }
 
-  async getPageTitle() {
-    return await this.driver.getTitle();
-  }
+    async getPageTitle(): Promise<string> {
+        return await this.driver.getTitle()
+    }
 
-  async addCookieAndRefresh(cookie: Cookie) {
-    await this.driver.manage().addCookie(cookie);
-    await this.driver.navigate().refresh();
-  }
+    async addCookieAndRefresh(cookie: Cookie): Promise<void> {
+        await this.driver.manage().addCookie(cookie)
+        await this.driver.navigate().refresh()
+    }
 }
