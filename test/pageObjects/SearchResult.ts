@@ -1,13 +1,13 @@
-import { By, Locator, WebDriver, until } from 'selenium-webdriver';
+import { By, Locator, WebDriver, until } from "selenium-webdriver";
 
-export class SearchResult{
-    private searchContents: Locator = By.id('contents')
-    
-    constructor(private driver: WebDriver){}
+export class SearchResult {
+  private searchContents: Locator = By.id("contents");
 
-    async getSearchResultElement(){
-        await this.driver.wait(until.elementLocated(this.searchContents), 5000);
+  constructor(private driver: WebDriver) {}
 
-        return await this.driver.findElement(this.searchContents);
-    }
+  async getSearchResultElement() {
+    await this.driver.wait(until.elementLocated(this.searchContents), 5000);
+
+    return await this.driver.findElement(this.searchContents);
+  }
 }
