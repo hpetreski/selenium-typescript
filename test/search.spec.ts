@@ -3,13 +3,14 @@ import { Home } from './pageObjects/Home.js'
 import { SearchResult } from './pageObjects/SearchResult.js'
 import { cookie } from '../data/cookieData.js'
 import { BrowserPage } from '../utils/BrowserUtils.js'
-
-const baseUrl = 'https://www.youtube.com/'
+import { baseUrl } from 'config/config.js'
 
 describe('Search functionality', function () {
     it('Search for videos', async function () {
+        // Disabling the linter complain as we are checking this in the before each step in the hook
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         const driver = this.test!.driver
-
+        
         const browserPage = new BrowserPage(driver)
         await browserPage.openApplication(baseUrl)
         await browserPage.addCookieAndRefresh(cookie)
