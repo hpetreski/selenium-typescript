@@ -5,8 +5,8 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "mocha test/**/*.spec.ts",
-        "test-old": "mocha",
+        "test": "mocha test/**/*.spec.ts --parallel --reporter spec",
+        "test-sequential": "mocha test/**/*.spec.ts && npm run allure-serve",
         "lint": "eslint . --ext .ts",
         "format": "prettier --write .",
         "prepare": "husky install",
