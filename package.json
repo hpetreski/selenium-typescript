@@ -9,7 +9,8 @@
         "test-old": "mocha",
         "lint": "eslint . --ext .ts",
         "format": "prettier --write .",
-        "prepare": "husky install"
+        "prepare": "husky install",
+        "allure-serve": "allure serve"
     },
     "author": "",
     "license": "ISC",
@@ -20,6 +21,7 @@
         "@types/mocha": "^10.0.1",
         "@types/selenium-webdriver": "^4.1.15",
         "@typescript-eslint/eslint-plugin": "^5.61.0",
+        "allure-commandline": "^2.23.0",
         "allure-mocha": "^2.4.0",
         "eslint": "^8.44.0",
         "eslint-config-prettier": "^8.8.0",
